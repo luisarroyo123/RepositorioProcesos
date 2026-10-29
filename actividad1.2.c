@@ -32,8 +32,6 @@ int main() {
             printf("El PADRE recibe algo del pipe: %s\n", buffer);
             break;
 
-
-
     }
     return 0;
 
