@@ -21,7 +21,7 @@ int main(void){
     //Comprobamos si las tuberias se crean correctamente
     if (pipe(fd1)==-1 || pipe(fd2)==-1){
         printf("Error al crear las tuberias");
-        exit(-1);
+        exit(-1);  
     }
 
     //El abuelo crea al hijo

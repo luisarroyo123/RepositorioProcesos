@@ -75,7 +75,7 @@ int main() {
             fflush(stdout);
             write(fd[1], &fact, sizeof(fact));
 
-        }
+            }
         close(fd[1]);
         exit(0);
         break;
