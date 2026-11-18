@@ -3,13 +3,16 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <fcntl.h>
+#include <unistd.h>
+#include <string.h>
 
-int main(void){
+int main(){
 
     int fp;
-    char mensaje="un saludo.\n";
+    char mensaje[]="un saludo.\n";
     const char *nombreA="FIFO2";
-    FILE *archivo=fopen(nombreA,"w");
+    fp=open(nombreA,1);
+    
     int salida=0;
 
     if (fp==-1){
@@ -17,8 +20,9 @@ int main(void){
         salida=-1;
     }
     else {
+        
         printf("Mando datos a la pipe...\n");
-        write(fp, mensaje, strlen(mensaje));
+        write(fp, (const void *)mensaje, strlen(mensaje));
         close(fp);
     }
     return salida;
